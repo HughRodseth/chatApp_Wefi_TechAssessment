@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PublishProfile>DefaultContainer</PublishProfile>
+    <UserSecretsId>5fc0ccc1-0c5e-4d38-a1cb-183514dfe0eb</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ContainerLabel Include="service" Value="chat-app.api" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="ChatApp.Api" />
+    <Using Include="ServiceStack" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ServiceStack" Version="10.0.4" />
+		<PackageReference Include="ServiceStack.Extensions" Version="10.0.4" />
+		<PackageReference Include="ServiceStack.OrmLite" Version="10.0.4" />
+		<PackageReference Include="ServiceStack.OrmLite.PostgreSQL" Version="10.0.4" />
+		<PackageReference Include="ServiceStack.Server" Version="10.0.4" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChatApp.Api.ServiceInterface\ChatApp.Api.ServiceInterface.csproj" />
+    <ProjectReference Include="..\ChatApp.Api.ServiceModel\ChatApp.Api.ServiceModel.csproj" />
+  </ItemGroup>
+
+</Project>
